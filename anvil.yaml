@@ -10,7 +10,7 @@ services:
   server_config: {user_table: 53127}
 package_name: pandasquerybuilder
 allow_embedding: false
-name: Clone of demo_version_data_explorer_FORUM_SHARE
+name: graphical_query_application_SHARE
 runtime_options: {version: 1, server_version: python3-full, client_version: '2'}
 metadata: {}
 startup_form: main
