@@ -1,0 +1,287 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: This application allows you to select student-level data by creating custom queries,
+      font_size: 20, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'GDZJQM,HKWWWA'}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Click here for a description of the currently available dataset,
+      font_size: 15, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '{}', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: dataset_desc
+    layout_properties: {grid_position: 'ZLCLCO,KZQMYC'}
+    event_bindings: {click: dataset_desc_click}
+    components: []
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Click here for a tutorial on how to use the application,
+      font_size: 15, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
+    name: tutorial_link
+    layout_properties: {grid_position: 'YFAPFW,LOBVKK'}
+    event_bindings: {click: tutorial_link_click}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: solid gray .25px, foreground: '',
+      visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"BZDBHO":35,"MLAGNY":25,"KVAIIQ":20,"OYSQCB":20,"HPJJXR":20,"NEQBMH":30,"QVFUAK":30,"RWNHSB":30,"FZDAAV":30,"OJKXWM":20,"WEERYJ":20,"BPIETG":20}',
+      spacing_below: small, background: 'theme:Gray 200'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'XRHZTA,PFKBTD'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: Build your query, font_size: 20, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_9
+      layout_properties: {grid_position: 'VZXGDL,LPVLBH'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: column, font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'DBXAFW,BZDBHO QBFRSH,OJKXWM'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: comparison, font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'DBXAFW,BZDBHO QBFRSH,WEERYJ'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: connector, font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'DBXAFW,BZDBHO QBFRSH,BPIETG'}
+      data_bindings: []
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: col1
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['']
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_col
+      layout_properties: {grid_position: 'DBXAFW,BZDBHO NLKUDK,KVAIIQ'}
+      event_bindings: {change: drop_down_change}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: '='
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['', equal to, less than, greater than, less than or equal to, greater than or equal to,
+          not equal to]
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_comp
+      layout_properties: {grid_position: 'DBXAFW,BZDBHO NLKUDK,OYSQCB'}
+      event_bindings: {change: drop_down_change}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['', and, or]
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_con
+      layout_properties: {grid_position: 'DBXAFW,BZDBHO NLKUDK,HPJJXR'}
+      event_bindings: {change: drop_down_change}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: separator, font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_5
+      layout_properties: {grid_position: 'DBXAFW,MLAGNY MKMDFU,RWNHSB'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: values, font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'DBXAFW,MLAGNY MKMDFU,FZDAAV'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['', (, )]
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_sep
+      layout_properties: {grid_position: 'DBXAFW,MLAGNY KDPOQM,NEQBMH'}
+      event_bindings: {change: drop_down_change}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['']
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_val
+      layout_properties: {grid_position: 'DBXAFW,MLAGNY KDPOQM,QVFUAK QZRMWJ,WTTRFO'}
+      event_bindings: {change: drop_down_change}
+    - type: TextBox
+      properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: number,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: large, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'DBXAFW,MLAGNY KDPOQM,QVFUAK HZVYMI,ZSEZVT'}
+      event_bindings: {pressed_enter: text_box_1_pressed_enter}
+    - type: FlowPanel
+      properties: {role: null, spacing: tiny, align: center, tooltip: '', border: '',
+        foreground: '', visible: true, spacing_above: small, spacing_below: large,
+        background: ''}
+      name: flow_panel_1
+      layout_properties: {grid_position: 'LGSFEF,FJZNDI', full_width_row: true}
+      event_bindings: {show: form_show}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Number of records returned from query: ', font_size: 15,
+        font: '', spacing_above: large, icon_align: left, spacing_below: large, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_num_records
+      layout_properties: {grid_position: 'UFYPLZ,AUTOFL'}
+    - type: Button
+      properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+        foreground: 'theme:Gray 800', visible: true, text: run query, font_size: null,
+        font: '', spacing_above: large, icon_align: left, spacing_below: small, italic: false,
+        background: 'theme:White', bold: false, underline: false, icon: 'fa:play-circle'}
+      name: run_query_button
+      layout_properties: {grid_position: 'ENGLOS,CHHOBY'}
+      event_bindings: {click: run_query_button_click}
+    - type: Button
+      properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: save query, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: large, italic: false,
+        background: 'theme:Gray 800', bold: false, underline: false, icon: 'fa:floppy-o'}
+      name: save_query_button
+      layout_properties: {grid_position: 'XKBEGB,JVBMWY'}
+      event_bindings: {click: save_query_button_click}
+  - type: Spacer
+    properties: {height: 297.99999237060547}
+    name: spacer_1
+    layout_properties: {grid_position: 'JAWFMF,GPWWZW'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: 'fa:home'}
+    name: link_3
+    layout_properties: {}
+    event_bindings: {click: home_link}
+- type: Label
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Custom Data Explorer, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_6
+  layout_properties: {slot: title}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_1
+  layout_properties: {slot: left-nav}
+  components:
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: example queries, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: example_q
+    layout_properties: {grid_position: 'STLAZE,NRCPLT'}
+    components: []
+    event_bindings: {click: query_viewer_click}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: saved queries, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: saved_q
+    layout_properties: {grid_position: 'KJRUNL,GROCLQ'}
+    event_bindings: {click: query_viewer_click}

@@ -1,0 +1,20 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  event_bindings: {show: form_show}
+components:
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: Saved queries, font_size: 20, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'YNGMAD,ZFTKHH'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'PDYTMR,REGNBY'}
+- type: RepeatingPanel
+  properties: {item_template: query_viewer_templ}
+  name: repeating_panel_1
+  layout_properties: {grid_position: 'LQRLYJ,IRZUBC'}

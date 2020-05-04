@@ -1,0 +1,18 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {use_microsoft: false, require_secure_passwords: false, share_login_status: false,
+    use_email: true, allow_remember_me: false, allow_signup: false, enable_automatically: false,
+    confirm_email: false, remember_me_days: 30}
+  server_config: {user_table: 53127}
+package_name: pandasquerybuilder
+allow_embedding: false
+name: Clone of demo_version_data_explorer_FORUM_SHARE
+runtime_options: {version: 1, server_version: python3-full, client_version: '2'}
+metadata: {}
+startup_form: main
+native_deps: {head_html: ''}
+renamed: true

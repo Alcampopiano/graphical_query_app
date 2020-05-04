@@ -1,0 +1,40 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+  data_bindings:
+  - {property: tag, code: 'self.item[''row_id'']'}
+components:
+- type: FlowPanel
+  properties: {role: null, spacing: tiny, align: center, tooltip: '', border: '',
+    foreground: '', visible: true, spacing_above: small, spacing_below: small, background: ''}
+  name: flow_panel_1
+  layout_properties: {grid_position: 'XTASGI,LGACZE'}
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {grid_position: 'AMNODB,RHBIFJ'}
+  data_bindings:
+  - {property: text, code: 'self.item[''notes'']'}
+- type: Button
+  properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: 'theme:Gray 800', visible: true, text: USE IT, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: 'theme:White',
+    bold: false, underline: false, icon: 'fa:share'}
+  name: primary_color_1
+  layout_properties: {grid_position: 'JSCIVZ,QUKLYL'}
+  event_bindings: {click: reuse_click}
+- type: Button
+  properties: {role: primary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: delete, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: 'theme:Gray
+      800', bold: false, underline: false, icon: 'fa:trash'}
+  name: primary_color_2
+  layout_properties: {grid_position: 'JJDVIX,WASFEF'}
+  event_bindings: {click: delete_click}
+  data_bindings:
+  - {property: tag, code: 'self.item[''row_id'']'}
+- type: form:hr
+  properties: {}
+  name: custom_1
+  layout_properties: {grid_position: 'GTWBFV,TCOXCB'}
+item_type: {table_id: null}
