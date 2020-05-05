@@ -3,36 +3,14 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-- source: /runtime/services/anvil/users.yml
-  client_config: {allow_signup: false, enable_automatically: false, use_email: true,
-    confirm_email: false, require_secure_passwords: false}
-  server_config: {user_table: users}
 package_name: pandasquerybuilder
 allow_embedding: false
-name: graphical_query_application_SHARE
+name: graphical_query_application_no_users_SHARE
 runtime_options: {version: 1, server_version: python3-full, client_version: '2'}
 metadata: {}
 startup_form: main
 native_deps: {head_html: ''}
 db_schema:
-- name: Users
-  id: 53129
-  python_name: users
-  columns:
-    5FhgmCtwAy4=:
-      name: password_hash
-      type: string
-      admin_ui: {order: 2, width: 200}
-    pOhQDKajvNY=:
-      name: email
-      type: string
-      admin_ui: {order: 0, width: 200}
-    rO8Ql6Vc6U8=:
-      name: enabled
-      type: bool
-      admin_ui: {order: 1, width: 100}
-  access: {python_name: users, app_id: 6ZTK5W2N2UI6YEGX, server: full, client: none,
-    table_id: 53129}
 - name: saved_queries
   id: 53126
   python_name: saved_queries
