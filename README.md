@@ -2,7 +2,9 @@
 
 <img src="https://github.com/Alcampopiano/graphical_query_app/blob/master/img/ga.gif?raw=true" alt="drawing" width="1000"/>
 
-An example of using the Anvil App Server to build a web application using nothing but Python.
+---
+
+An example of using the [Anvil](https://anvil.works/) App Server to build a web application using nothing but Python.
 
 As shown above, this application allows you to select data based on a graphical-style query.
 
