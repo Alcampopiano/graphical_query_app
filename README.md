@@ -1,6 +1,6 @@
 # Graphical Query Application
 
-<img src="https://github.com/Alcampopiano/graphical_query_app/blob/master/img/ga.gif?raw=true" alt="drawing" width="150"/>
+<img src="https://github.com/Alcampopiano/graphical_query_app/blob/master/img/ga.gif?raw=true" alt="drawing" width="1000"/>
 
 An example of using the Anvil App Server to build a web application using nothing but Python.
 
@@ -65,10 +65,8 @@ query_str='{"but_text":["EQAO_Math_Program","equal to","Academic","and","math_eq
 
 user_id='example'
 
-notes="""
-Students who were below the provincial standard in grade three 
-but went on to be in the Academic Math program (in grade 9)
-"""
+notes="Students who were below the provincial standard in grade three \
+but went on to be in the Academic Math program (in grade 9)"
 
 app_tables.saved_queries.add_row(user_id=user_id, query_str=query_str, notes=notes)
 ```
