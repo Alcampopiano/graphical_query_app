@@ -7,14 +7,14 @@ import io
   
 @anvil.server.callable()  
 def file_upload(file):
-  
-  #name='eqao_and_report_card'
- 
-  row=app_tables.data.get(name='data', media=file)
-  print('here', type(file))
+   
+  row=app_tables.data.get(name='data')
   
   if not row:
       row=app_tables.data.add_row(name='data', media=file)
+      
+  else:
+    row.update(media=file)
       
   d=pull_df_meta()
   

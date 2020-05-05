@@ -178,7 +178,7 @@ class main(mainTemplate):
     
     print(type(file))
     #m=anvil.BlobMedia('text/csv', file.get_bytes(), name=file.name)
-    df=anvil.server.call('file_upload', file)
+    df_meta=anvil.server.call('file_upload', file)
     cols=df_meta.keys()
     cols=sorted(cols)
     self.tag.values=df_meta
