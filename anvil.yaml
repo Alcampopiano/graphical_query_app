@@ -20,7 +20,7 @@ db_schema:
       type: string
       admin_ui: {order: 0, width: 200}
     us4NJuuw2FM=:
-      name: but_data
+      name: query_str
       type: simpleObject
       admin_ui: {order: 1, width: 788}
     vVpiuR5uvGg=:

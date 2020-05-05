@@ -69,7 +69,7 @@ def save_query(but_data, notes):
   
   #email=anvil.users.get_user()['email']
   #row=app_tables.saved_queries.add_row(user_id=email, but_data=but_data, notes=notes)
-  row=app_tables.saved_queries.add_row(but_data=but_data, notes=notes)
+  row=app_tables.saved_queries.add_row(query_str=but_data, notes=notes)
 
 @anvil.server.callable('pull_saved_queries')   
 def pull_saved_queries(examples=False):
@@ -81,7 +81,7 @@ def pull_saved_queries(examples=False):
     #rows=app_tables.saved_queries.search(user_id=anvil.users.get_user()['email'])
     rows=app_tables.saved_queries.search()
 
-  rows=[{'row_id': r.get_id(), 'notes': r['notes'], 'but_data': r['but_data']} for r in rows]
+  rows=[{'row_id': r.get_id(), 'notes': r['notes'], 'but_data': r['query_str']} for r in rows]
   
 
   return rows
