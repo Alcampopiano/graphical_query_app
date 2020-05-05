@@ -10,8 +10,8 @@ class main(mainTemplate):
     
     self.init_components(**properties)
     
-    while not anvil.users.login_with_form():
-      pass
+#     while not anvil.users.login_with_form():
+#       pass
     
     #print(previous_qry)
     self.tag.previous_qry_comps=previous_qry
