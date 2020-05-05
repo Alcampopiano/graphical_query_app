@@ -1,3 +1,4 @@
+from ._anvil_designer import mainTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -40,9 +41,7 @@ class main(mainTemplate):
     self.drop_down_con.tag.name='connector'
     self.drop_down_sep.tag.name='separator'
     self.drop_down_val.tag.name='value'
-    
-    self.dataset_load()
-    
+      
     
   def form_show(self, **event_args):
     
@@ -53,14 +52,14 @@ class main(mainTemplate):
         self.flow_panel_1.add_component(b)
     
     
-  def dataset_load(self, **event_args):
+#   def dataset_load(self, **event_args):
 
-      df_meta=anvil.server.call('pull_df_meta')
-      cols=df_meta.keys()
-      cols=sorted(cols)
-      self.tag.values=df_meta
-      self.drop_down_col.items=[''] + cols
-      self.flow_panel_1.clear()
+#       df_meta=anvil.server.call('pull_df_meta')
+#       cols=df_meta.keys()
+#       cols=sorted(cols)
+#       self.tag.values=df_meta
+#       self.drop_down_col.items=[''] + cols
+#       self.flow_panel_1.clear()
   
 
   def drop_down_change(self, **event_args):
@@ -176,5 +175,14 @@ class main(mainTemplate):
     open_form('main')
 
   def file_loader_1_change(self, file, **event_args):
-    anvil.server.call('file_upload', file)
+    
+    print(type(file))
+    #m=anvil.BlobMedia('text/csv', file.get_bytes(), name=file.name)
+    df=anvil.server.call('file_upload', file)
+    cols=df_meta.keys()
+    cols=sorted(cols)
+    self.tag.values=df_meta
+    self.drop_down_col.items=[''] + cols
+    self.flow_panel_1.clear()
+    
 

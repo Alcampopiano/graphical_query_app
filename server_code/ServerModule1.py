@@ -5,30 +5,36 @@ import anvil.server
 import pandas as pd
 import io
   
-  
+@anvil.server.callable()  
 def file_upload(file):
-  name='eqao_and_report_card'
+  
+  #name='eqao_and_report_card'
  
   row=app_tables.data.get(name='data', media=file)
+  print('here', type(file))
   
   if not row:
       row=app_tables.data.add_row(name='data', media=file)
+      
+  d=pull_df_meta()
+  
+  return d
 
   
-def get_df_with_cleaned_column_names(name):
+def get_df_with_cleaned_column_names():
   
-  row=app_tables.data.get(name=name)
+  row=app_tables.data.get(name='data')
   df=pd.read_csv(io.BytesIO(row['media'].get_bytes()))
   df.columns=df.columns.str.strip().str.replace('[\\\/*\-+&$|]', '').str.replace('\s', '_')
   #filter_column=row['filter_column']
   
   return df #, filter_column
   
-@anvil.server.callable('pull_df_meta')
+#@anvil.server.callable('pull_df_meta')
 def pull_df_meta():
   
   #df, filter_column=get_df_with_cleaned_column_names(name)
-  df=get_df_with_cleaned_column_names(name)
+  df=get_df_with_cleaned_column_names()
 
   #df=get_filtered_df(df, filter_column)
   
@@ -45,7 +51,7 @@ def pull_df_meta():
 def get_query_results(q):
   
   #df, filter_column=get_df_with_cleaned_column_names(name)
-  df=get_df_with_cleaned_column_names(name)
+  df=get_df_with_cleaned_column_names()
 
   #df=get_filtered_df(df, filter_column)
   df=df.query(q)

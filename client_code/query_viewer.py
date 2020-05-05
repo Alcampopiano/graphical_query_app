@@ -1,3 +1,4 @@
+from ._anvil_designer import query_viewerTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables

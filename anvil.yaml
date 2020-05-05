@@ -6,7 +6,7 @@ services:
 package_name: pandasquerybuilder
 allow_embedding: false
 name: graphical_query_application_no_users_SHARE
-runtime_options: {version: 1, server_version: python3-full, client_version: '2'}
+runtime_options: {version: 2, server_version: python3-full, client_version: '3'}
 metadata: {}
 startup_form: main
 native_deps: {head_html: ''}

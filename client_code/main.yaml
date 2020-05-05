@@ -33,35 +33,43 @@ components:
     name: tutorial_link
     layout_properties: {grid_position: 'YFAPFW,LOBVKK'}
     event_bindings: {click: tutorial_link_click}
-    components:
-    - type: FileLoader
-      properties:
-        role: primary-color
-        show_state: true
-        align: center
-        tooltip: ''
-        border: ''
-        file_types: null
-        enabled: true
-        files: []
-        foreground: ''
-        visible: true
-        text: Upload your CSV
-        font_size: null
-        font: ''
-        spacing_above: small
-        icon_align: left
-        spacing_below: small
-        italic: false
-        file: null
-        background: ''
-        bold: false
-        underline: false
-        multiple: false
-        icon: fa:upload
-      name: file_loader_1
-      layout_properties: {grid_position: 'EJSMME,HADVCN'}
-      event_bindings: {change: file_loader_1_change}
+    components: []
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {grid_position: 'UHUEBL,YUVAOW'}
+  - type: FileLoader
+    properties:
+      role: primary-color
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: null
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: Upload your CSV
+      font_size: null
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: file_loader_1
+    layout_properties: {grid_position: 'ZOIBUA,SQVZRZ'}
+    event_bindings: {change: file_loader_1_change}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'RUGMOC,KDPHEG'}
   - type: ColumnPanel
     properties: {role: null, tooltip: '', border: solid gray .25px, foreground: '',
       visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"BZDBHO":35,"MLAGNY":25,"KVAIIQ":20,"OYSQCB":20,"HPJJXR":20,"NEQBMH":30,"QVFUAK":30,"RWNHSB":30,"FZDAAV":30,"OJKXWM":20,"WEERYJ":20,"BPIETG":20}',

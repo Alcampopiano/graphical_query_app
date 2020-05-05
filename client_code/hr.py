@@ -1,3 +1,4 @@
+from ._anvil_designer import hrTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
