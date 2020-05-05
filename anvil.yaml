@@ -37,10 +37,6 @@ db_schema:
       name: name
       type: string
       admin_ui: {order: 0, width: 306.011364}
-    UnR0vmY32IY=:
-      name: filter_column
-      type: string
-      admin_ui: {order: 2, width: 200}
     ymFgAJzkwyM=:
       name: media
       type: media

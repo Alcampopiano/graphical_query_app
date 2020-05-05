@@ -174,3 +174,7 @@ class main(mainTemplate):
     
   def home_link(self, **event_args):
     open_form('main')
+
+  def file_loader_1_change(self, file, **event_args):
+    anvil.server.call('file_upload', file)
+
